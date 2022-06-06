@@ -50,14 +50,16 @@ const CategoryPage = () => {
 
     }
 
+
     const productData = React.useCallback(
         (id, navigationName) => {
             // fetchStroiId({ id }).then(res => {
-            //     console.log(res);
+
             //     setProduct(res)
             // })
-            // {product==false ? <NotFoundPage message='No Products' /> : <GridProduct props={product} navigationName={navigationName}/>}
-            // console.log(id);
+            // console.log(product);
+            // { product == false ? <NotFoundPage message='No Products' /> : <GridProduct props={product} navigationName={navigationName} /> }
+
         },
         [id]
     );

@@ -1,11 +1,19 @@
 import React from 'react'
 
 const Navigation = ({ navigation }) => {
-    console.log(navigation);
+
+    let nav = navigation.filter(item => {
+        if (item) {
+            return true
+        }
+        else {
+            return false
+        }
+    })
     return (
         <div>
-            {navigation.map((item, index) => (
-                <span key={index} style={{ fontWeight: "bold" }}> {item} ></span>
+            {nav.map((item, index) => (
+                <span key={index} style={{ fontWeight: "bold" }}> {item} > </span>
             ))}
         </div>
     )

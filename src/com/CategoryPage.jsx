@@ -4,13 +4,13 @@ import { useSelector } from 'react-redux';
 import GridElement from "./GridElement"
 import GridProduct from "./GridProduct"
 import NotFoundPage from './NotFoundPage';
-import { fetchStroiId } from "../fetchers/fetchStroi"
+
 
 
 
 const CategoryPage = () => {
     // console.log(useParams());
-    const [product, setProduct] = React.useState([])
+
     const { id } = useParams();
     const val = useSelector((state) => state.stroi.products);
 
@@ -50,24 +50,12 @@ const CategoryPage = () => {
 
     }
 
-
-    const productData = React.useCallback(
-        (id, navigationName) => {
-            // fetchStroiId({ id }).then(res => {
-
-            //     setProduct(res)
-            // })
-            // console.log(product);
-            // { product == false ? <NotFoundPage message='No Products' /> : <GridProduct props={product} navigationName={navigationName} /> }
-
-        },
-        [id]
-    );
+    let chekValue = categoryItemValue.hasOwnProperty('childCategories')
 
 
     return (
         <>
-            {categoryItemValue.hasOwnProperty('childCategories') == false ? productData(id, categoryItemValue.name) :
+            {chekValue == false ? <GridProduct id={id} categoryName={categoryItemValue.name} /> :
                 categoryItemValue.childCategories.length != 0 ?
                     <GridElement props={categoryItemValue.childCategories} id={id} navigationName={categoryItemValue.name} /> : <NotFoundPage message={"No Category"} navigationName={categoryItemValue.name} />}
         </>

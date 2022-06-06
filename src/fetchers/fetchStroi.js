@@ -13,7 +13,7 @@ export function fetchStroiId({ id }) {
     return axios
         .get(`http://e-stroi.kz:8082/catalog/client/item?categoryId=${id}&lang=ru`)
         .then((res) => {
-            // console.log(res.data.content);
+
             return res.data.content;
         });
 }

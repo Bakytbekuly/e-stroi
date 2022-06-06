@@ -26,7 +26,7 @@ export default function GridElement(props) {
     }, [props])
 
     Array.from(props)
-    console.log(props);
+
     return (
         <>
 

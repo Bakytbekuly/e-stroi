@@ -7,7 +7,7 @@ import { setNavigation } from '../store/slice/stroi'
 const Layout = () => {
 
     const val = useSelector((state) => state.stroi.navigation);
-    console.log(val);
+
     return (
         <>
             <header>

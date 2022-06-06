@@ -5,7 +5,7 @@ import { setNavigation } from '../store/slice/stroi';
 
 
 const NotFoundPage = ({ message = "Error  404", navigationName }) => {
-    console.log(navigationName);
+
     const dispatch = useDispatch()
     dispatch(setNavigation(navigationName))
     return (
